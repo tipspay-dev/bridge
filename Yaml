@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  bsc_to_tron:
+    build:
+      context: ../relayer/bsc-to-tron
+      dockerfile: ../../docker/relayer-bsc-to-tron.Dockerfile
+    env_file:
+      - ../relayer/.env
+    restart: always
+
+  tron_to_bsc:
+    build:
+      context: ../relayer/tron-to-bsc
+      dockerfile: ../../docker/relayer-tron-to-bsc.Dockerfile
+    env_file:
+      - ../relayer/.env
+    restart: always
